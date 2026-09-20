@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Snow Study ❄️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         SNOW WORLD BACKGROUND
+         ========================================= -->
+
+    <div class="snow-world"></div>
+
+
+    <!-- =========================================
+         APP LAYOUT
+         ========================================= -->
+
+    <div class="app-layout">
+
+
+        <!-- =====================================
+             SIDEBAR
+             ===================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h1>❄️ Snow Study</h1>
+                <p>Your Study Companion</p>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="#dashboard">
+                    🏠 Dashboard
+                </a>
+
+                <a href="#timetable-section">
+                    📅 Timetable
+                </a>
+
+                <a href="#progress-section">
+                    📊 Progress
+                </a>
+
+                <a href="#report-section">
+                    📈 Daily Report
+                </a>
+
+                <a href="#focus-section">
+                    ⏱️ Focus
+                </a>
+
+                <a href="#achievements-section">
+                    🏆 Achievements
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =====================================
+             MAIN CONTENT
+             ===================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================
+                 HEADER
+                 ================================= -->
+
+            <header>
+
+                <div>
+                    <h2>Welcome Back, Snow! ❄️</h2>
+
+                    <p id="currentDate">
+                        Loading date...
+                    </p>
+                </div>
+
+                <div class="quote">
+                    "One small step every day leads to big success." ✨
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================
+                 TOP STATS
+                 ================================= -->
+
+            <section class="stats-grid" id="dashboard">
+
+
+                <!-- Progress -->
+
+                <div class="card dashboard-card">
+
+                    <div class="card-header">
+                        <h2>📊 Progress</h2>
+                    </div>
+
+                    <div class="stat-big" id="progressText">
+                        0%
+                    </div>
+
+                    <p>Today's completed tasks</p>
+
+                </div>
+
+
+
+                <!-- Streak -->
+
+                <div class="card dashboard-card" id="streakCard">
+
+                    <div class="card-header">
+                        <h2>🔥 Streak</h2>
+                    </div>
+
+                    <div
+                        class="stat-big"
+                        id="streakText"
+                    >
+                        Current streak: 0 days 🔥
+                    </div>
+
+                </div>
+
+
+
+                <!-- Study Hours -->
+
+                <div class="card dashboard-card">
+
+                    <div class="card-header">
+                        <h2>⏰ Study Time</h2>
+                    </div>
+
+                    <div
+                        class="stat-big"
+                        id="studyHoursCard"
+                    >
+                        0h 0m
+                    </div>
+
+                    <p>Focus time completed</p>
+
+                </div>
+
+
+
+                <!-- Reminder -->
+
+                <div class="card dashboard-card">
+
+                    <div class="card-header">
+                        <h2>🔔 Next Session</h2>
+                    </div>
+
+                    <div id="reminderText">
+                        Checking schedule...
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 DASHBOARD GRID
+                 ================================= -->
+
+            <section class="dashboard-grid">
+
+
+
+                <!-- =================================
+                     SUBJECT PROGRESS
+                     ================================= -->
+
+                <div
+                    class="card dashboard-card"
+                    id="progress-section"
+                >
+
+                    <div class="card-header">
+
+                        <h2>📚 Subject Progress</h2>
+
+                    </div>
+
+                    <div id="subjectProgress">
+
+                        <p class="dashboard-empty">
+                            Add subjects to see progress.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     WEAKNESS MAP
+                     ================================= -->
+
+                <div class="card dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>🧠 Weakness Map</h2>
+
+                    </div>
+
+                    <div id="weaknessMap">
+
+                        <p class="dashboard-empty">
+                            No weakness data yet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     REVISION
+                     ================================= -->
+
+                <div class="card dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>🔁 Revision</h2>
+
+                    </div>
+
+                    <div id="revisionList">
+
+                        <p class="dashboard-empty">
+                            Nothing needs revision right now.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     MISSED TASKS
+                     ================================= -->
+
+                <div class="card dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>📌 Missed Tasks</h2>
+
+                    </div>
+
+                    <div id="missedTasks">
+
+                        <p class="dashboard-empty">
+                            🎉 No missed tasks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     DAILY REPORT
+                     ================================= -->
+
+                <div
+                    class="card dashboard-card"
+                    id="report-section"
+                >
+
+                    <div class="card-header">
+
+                        <h2>📈 Daily Report</h2>
+
+                        <button
+                            type="button"
+                            onclick="generateDailyReport()"
+                        >
+                            Generate Report
+                        </button>
+
+                    </div>
+
+                    <div id="dailyReport">
+
+                        <p class="dashboard-empty">
+                            No report generated yet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     STUDY HISTORY
+                     ================================= -->
+
+                <div class="card dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>📅 Study History</h2>
+
+                    </div>
+
+                    <div id="studyHistory">
+
+                        <p class="dashboard-empty">
+                            No study history yet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     WEEKLY STATS
+                     ================================= -->
+
+                <div class="card dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>📊 Weekly Statistics</h2>
+
+                    </div>
+
+                    <div id="weeklyStats">
+
+                        <p class="weekly-empty">
+                            Weekly statistics will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     ACHIEVEMENTS
+                     ================================= -->
+
+                <div
+                    class="card dashboard-card"
+                    id="achievements-section"
+                >
+
+                    <div class="card-header">
+
+                        <h2>🏆 Achievements</h2>
+
+                    </div>
+
+                    <div id="achievementList">
+
+                        <p class="dashboard-empty">
+                            Complete your first study session to unlock achievements. ✨
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     FOCUS SESSION
+                     ================================= -->
+
+                <div
+                    class="card dashboard-card"
+                    id="focus-section"
+                >
+
+                    <div class="card-header">
+
+                        <h2>⏱️ Focus Session</h2>
+
+                    </div>
+
+
+                    <div class="focus-dashboard">
+
+                        <div
+                            class="focus-mode-label"
+                            id="focusModeLabel"
+                        >
+                            🧠 Focus Time — 60 min
+                        </div>
+
+
+                        <div
+                            class="focus-timer"
+                            id="focusTime"
+                        >
+                            60:00
+                        </div>
+
+
+                        <p class="focus-message">
+                            Stay focused and make this session count. ✨
+                        </p>
+
+
+                        <div class="focus-controls">
+
+                            <button
+                                type="button"
+                                onclick="startFocus()"
+                            >
+                                ▶️ Start / Pause
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="focus-reset"
+                                onclick="resetFocus()"
+                            >
+                                🔄 Reset
+                            </button>
+
+                        </div>
+
+
+                        <div class="focus-session-count">
+
+                            Completed focus sessions:
+                            <strong id="focusSessionsCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     TODAY'S STUDY TIME
+                     ================================= -->
+
+                <div class="card dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>⏰ Today's Study Time</h2>
+
+                    </div>
+
+                    <div
+                        class="stat-big"
+                        id="todayStudyTime"
+                    >
+                        0h 0m
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     TIMETABLE
+                     ================================= -->
+
+                <div
+                    class="card dashboard-card timetable-dashboard-card"
+                    id="timetable-section"
+                >
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h2>📅 Today's Timetable</h2>
+
+                            <p>
+                                Plan your study sessions and track your targets.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            onclick="addTimetableRow()"
+                        >
+                            ➕ Add Task
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- TIMETABLE HEADINGS -->
+
+                    <div class="timetable-header">
+
+                        <span>Start</span>
+
+                        <span>End</span>
+
+                        <span>Subject</span>
+
+                        <span>Task / Goal</span>
+
+                        <span>Target</span>
+
+                        <span>Completed</span>
+
+                        <span>Done</span>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    <!-- TIMETABLE ROWS -->
+
+                    <div id="timetable"></div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 FOOTER
+                 ================================= -->
+
+            <footer>
+
+                <p>
+                    Made with ❄️ for Snow Study
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================================
+         SCRIPT
+         ========================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
